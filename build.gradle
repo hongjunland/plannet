@@ -21,12 +21,16 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
-    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'com.h2database:h2:1.4.197'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     implementation 'org.springdoc:springdoc-openapi-ui:1.5.2'
     implementation 'org.springdoc:springdoc-openapi-data-rest:1.5.2'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.6.1'
+    implementation 'org.hibernate:hibernate-core:5.4.10.Final'
+
 
 
 }
