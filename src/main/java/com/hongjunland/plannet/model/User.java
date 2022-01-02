@@ -1,7 +1,10 @@
 
 package com.hongjunland.plannet.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -12,7 +15,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 
-public class UserDto {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
