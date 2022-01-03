@@ -14,8 +14,15 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    public void createUser(User user) {
+        userRepository.save(user);
+    }
+
     public User getUserById(Long id) {
         return userRepository.findById(id).get();
+    }
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
 
     @Transactional
@@ -24,15 +31,7 @@ public class UserService {
         return user.updateUser(userDto);
     }
 
-    public void createUser(User user) {
-        userRepository.save(user);
-    }
-
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
-    }
-
-    public List<User> findAll() {
-        return userRepository.findAll();
     }
 }

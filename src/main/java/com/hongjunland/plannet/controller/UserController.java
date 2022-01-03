@@ -25,16 +25,16 @@ public class UserController {
         userService.createUser(user);
     }
 
-    @GetMapping(value = "/users")
-    @Operation(summary = "회원 전체 조회" , description = "user 전체 목록 조회")
-    public List<User> findAll() {
-        return userService.findAll();
-    }
-
     @GetMapping("/user/{id}")
     @Operation(summary = "회원 조회" , description = "id를 이용하여 user를 조회")
     public User getUser(@PathVariable Long id){
         return userService.getUserById(id);
+    }
+
+    @GetMapping(value = "/users")
+    @Operation(summary = "회원 전체 조회" , description = "user 전체 목록 조회")
+    public List<User> findAll() {
+        return userService.findAll();
     }
 
     @PutMapping("/user/{id}")
