@@ -1,6 +1,7 @@
 
-package com.hongjunland.plannet.model;
+package com.hongjunland.plannet.entity;
 
+import com.hongjunland.plannet.dto.UserDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,7 +15,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
 public class User {
 
     @Id
@@ -24,4 +24,10 @@ public class User {
     private String password;
     private String name;
 
+    public User updateUser(UserDto dto){
+        this.email = dto.getEmail();
+        this.password = dto.getPassword();
+        this.name = dto.getName();
+        return this;
+    }
 }
