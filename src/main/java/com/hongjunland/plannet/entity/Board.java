@@ -25,6 +25,7 @@ public class Board {
     public Board updateBoard(BoardDto boardDto){
         this.title = boardDto.getTitle();
         this.content = boardDto.getContent();
+        this.modifiedDate = boardDto.getModifiedDate();
         return this;
 //        this.modifiedDate = boardDto.getModifiedDate();
     }

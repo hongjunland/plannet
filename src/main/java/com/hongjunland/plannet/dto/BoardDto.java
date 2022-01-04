@@ -14,7 +14,7 @@ public class BoardDto {
     private String title;
     private String content;
     private Date reportingDate;
-//    private Date modifiedDate;
+    private Date modifiedDate;
 }
 
 //    `board_id`    INT              NOT NULL    AUTO_INCREMENT COMMENT '게시글ID',
