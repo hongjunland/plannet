@@ -21,6 +21,7 @@ public class UserController {
 
     @Operation(summary = "사용자 등록", description = "사용자의 이메일, 이름, 비밀번호로 등록한다")
     @PostMapping(value = "/user")
+    @ResponseStatus(HttpStatus.CREATED)
     public void createUser(@RequestBody User user){
         userService.createUser(user);
     }

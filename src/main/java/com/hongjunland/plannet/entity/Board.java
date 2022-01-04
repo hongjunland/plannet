@@ -16,16 +16,19 @@ public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long writer;
+
+    @ManyToOne
+    private User user;
+
     private String title;
     private String content;
     private Date reportingDate;
-    private Date modifiedDate;
+//    private Date modifiedDate;
 
     public Board updateBoard(BoardDto boardDto){
         this.title = boardDto.getTitle();
         this.content = boardDto.getContent();
-        this.modifiedDate = boardDto.getModifiedDate();
+//        this.modifiedDate = boardDto.getModifiedDate();
         return this;
 //        this.modifiedDate = boardDto.getModifiedDate();
     }
