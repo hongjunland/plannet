@@ -1,5 +1,6 @@
 package com.hongjunland.plannet.dto;
 
+import com.hongjunland.plannet.entity.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,7 +11,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class BoardDto {
-    private Long writer;
+    private User user;
     private String title;
     private String content;
     private Date reportingDate;

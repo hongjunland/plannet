@@ -3,9 +3,11 @@ package com.hongjunland.plannet.controller;
 import com.hongjunland.plannet.dto.BoardDto;
 import com.hongjunland.plannet.entity.Board;
 import com.hongjunland.plannet.service.BoardService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+@Tag(name = "board", description = "게시판 API")
 @RestController
 @RequestMapping(value = "/api")
 public class BoardController {

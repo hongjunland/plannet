@@ -18,6 +18,7 @@ public class Board {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name ="USER_ID" , nullable = false)
     private User user;
 
     private String title;
