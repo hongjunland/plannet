@@ -6,6 +6,7 @@ import com.hongjunland.plannet.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -33,5 +34,13 @@ public class UserService {
 
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
+    }
+
+    public void login(HttpSession session, String email , String password) {
+        User user = userRepository.findByEmail(email);
+        if(user==null) throw new RuntimeException("Not Found Account");
+        if(user.getEmail().equals(email) && user.getPassword().equals(password)){
+            session.setAttribute("user",user);
+        }
     }
 }
