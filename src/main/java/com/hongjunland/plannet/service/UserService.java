@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -36,11 +37,7 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    public void login(HttpSession session, String email , String password) {
-        User user = userRepository.findByEmail(email);
-        if(user==null) throw new RuntimeException("Not Found Account");
-        if(user.getEmail().equals(email) && user.getPassword().equals(password)){
-            session.setAttribute("user",user);
-        }
+    public Optional<User> findUserByEmail(String email){
+        return userRepository.findByEmail(email);
     }
 }

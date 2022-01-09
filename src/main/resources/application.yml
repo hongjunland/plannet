@@ -26,3 +26,6 @@ logging:
     org.springframework.web.client: DEBUG
     org.hibernate.SQL: DEBUG
     org.hibernate.type: trace
+
+jwt:
+  secret: jwtsecret
